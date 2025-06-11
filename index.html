@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Жайлау Ерсайын — Резюме</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #e6f9f5;
+      color: #0a3d3f;
+      line-height: 1.6;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1s ease forwards;
+    }
+    section:nth-child(2) { animation-delay: 0.3s; }
+    section:nth-child(3) { animation-delay: 0.6s; }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+    .intro-left { flex: 1; }
+    .intro-left h1 { font-size: 2.5rem; color: #007c74; }
+    .intro-left h2 { font-size: 1.5rem; margin-bottom: 10px; }
+    .intro-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .photo-placeholder {
+        width: 250px;
+        height: 250px;
+        background: #c2f4ee;
+        border: 3px dashed #007c74;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* ВАЖНО: обрезает содержимое по границе круга */
+        }
+
+        .photo-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Растягивает и обрезает изображение так, чтобы оно полностью заполняло круг */
+        border-radius: 50%; /* Чтобы края изображения тоже были круглыми */
+        }
+
+    .contacts p, .contacts a {
+      margin: 5px 0;
+      color: #0a3d3f;
+    }
+    .skills h2, .projects h2 {
+      font-size: 2rem;
+      color: #007c74;
+      margin-bottom: 20px;
+    }
+    .skills ul {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+    .skills li {
+      background: #c2f4ee;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+    .projects .project {
+      background: #ffffff;
+      border-left: 5px solid #007c74;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 124, 116, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .projects .project:hover {
+      transform: translateY(-5px);
+    }
+    .projects .project a {
+      color: #007c74;
+      font-weight: 600;
+    }
+    .screenshot-stack {
+      display: flex;
+      position: relative;
+      height: 120px;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: height 0.4s ease;
+      overflow: hidden;
+    }
+    .screenshot-stack img {
+      position: absolute;
+      height: 100px;
+      width: auto;
+      border-radius: 6px;
+      transition: transform 0.5s ease, left 0.5s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .screenshot-stack img:nth-child(1) { left: 0; z-index: 6; transform: rotate(-4deg); }
+    .screenshot-stack img:nth-child(2) { left: 30px; z-index: 5; transform: rotate(2deg); }
+    .screenshot-stack img:nth-child(3) { left: 60px; z-index: 4; transform: rotate(-2deg); }
+    .screenshot-stack img:nth-child(4) { left: 90px; z-index: 3; transform: rotate(1deg); }
+    .screenshot-stack img:nth-child(5) { left: 120px; z-index: 2; transform: rotate(-1deg); }
+    .screenshot-stack img:nth-child(6) { left: 150px; z-index: 1; transform: rotate(0.5deg); }
+    .screenshot-stack.expanded {
+      height: auto;
+      flex-wrap: wrap;
+      position: static;
+    }
+    .screenshot-stack.expanded img {
+      position: static;
+      transform: rotate(0);
+      margin: 5px;
+      height:440px;
+    }
+    @media (max-width: 768px) {
+      .intro {
+        flex-direction: column;
+        text-align: center;
+      }
+      .photo-placeholder {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="intro">
+    <div class="intro-left">
+      <h1>Жайлау Ерсайын Бегалыұлы</h1>
+      <h2>Разработчик (в основном Frontend)</h2>
+      <p>Я студент, интересующийся сферой ИТ и стремящийся получить опыт для будущего. Люблю учиться новому, участвовать в проектах, решать реальные задачи и постоянно совершенствоваться.</p>
+      <div class="contacts">
+        <p>Email: ersaiynzhailau1@gmail.com</p>
+        <p>GitHub: <a href="https://github.com/Ersaiyn-go">Ersaiyn-go</a></p>
+        <p>Телефон: +7 705 437 2012</p>
+      </div>
+    </div>
+    <div class="intro-right">
+      <div class="photo-placeholder"><img src="img/my/1.jpg"alt="Скриншот 1">
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Навыки</h2>
+    <ul>
+      <li>Языки: Python, SQL, Java, JavaScript, HTML, CSS, C++</li>
+      <li>Фреймворки: Django, Flask, Spring</li>
+      <li>Инструменты: Git, Docker, VS Code, IntelliJ IDEA, PgAdmin, SSMS</li>
+    </ul>
+    <h2>Образование</h2>
+    <p>МУИТ (IITU), 3 курс, Информационные системы – IT-бизнес анализ<br>2022 – 2026<br>Школа №59 им. Б. Момышулы — окончил в 2022 году</p>
+  </section>
+
+  <section class="projects">
+    <h2>Проекты</h2>
+
+    <div class="project">
+      <h3>Онлайн магазин мужской одежды</h3>
+      <p>Первый курс. Без базы данных, но с хорошим дизайном.</p>
+      <div class="screenshot-stack" onclick="this.classList.toggle('expanded')">
+        <img src="img/project1/1.png" alt="Скриншот 1">
+        <img src="img/project1/2.png" alt="Скриншот 2">
+        <img src="img/project1/3.png" alt="Скриншот 3">
+        <img src="img/project1/4.png" alt="Скриншот 4">
+        <img src="img/project1/5.png" alt="Скриншот 5">
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Магазин комиксов</h3>
+      <p>Продажа комиксов с базой данных и авторизацией. Два входа — пользователь и админ, с разными функциями.</p>
+      <a href="https://github.com/Ersaiyn-go/Kaz-comics">GitHub проекта</a>
+      <div class="screenshot-stack" onclick="this.classList.toggle('expanded')">
+        <img src="img/project2/1.png" alt="Скриншот 1">
+        <img src="img/project2/2.png" alt="Скриншот 2">
+        <img src="img/project2/3.png" alt="Скриншот 3">
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>ИИ: Оценка квартиры по фото и данным</h3>
+      <p>Используется машинное обучение и обработка изображений для оценки недвижимости.</p>
+      <a href="https://github.com/Ersaiyn-go/house-go">GitHub проекта</a>
+      <div class="screenshot-stack" onclick="this.classList.toggle('expanded')">
+        <img src="img/project3/1.png" alt="Скриншот 1">
+        <img src="img/project3/2.png" alt="Скриншот 2">
+        <img src="img/project3/3.png" alt="Скриншот 3">
+
+      </div>
+    </div>
+  </section>
+</body>
+</html>
